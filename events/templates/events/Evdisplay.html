@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Edisplay</title>
+    <style>
+        .body{
+            display: grid;
+            grid-template-areas: 
+            'img img img img'
+            'con1 con1 con1 con1'
+        }
+        .imgcontainer{
+            grid-area: img;
+            margin: 5px 60px;
+            margin-bottom: 0px ;
+            width: 90vw;
+            height: 60vh;
+        }
+        .container1{
+            background-color: rgb(194, 194, 194);
+            margin: 0px 60px;
+            width: 90vw;
+            height: 20vh;
+        }
+        .container2{
+            display: inline-block;
+            margin: 2px 35px;
+            grid-area: con2;
+            border: 1px solid black;
+            /* background-color: rgb(233, 232, 230); */
+            width: 60vw;
+            height: 40vh;
+        }
+        .container3{
+            display: inline-block;
+            border: 1px solid black;
+            /* background-color: blueviolet; */
+            width: 30vw;
+            height: 40vh;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+        {% load static %}
+        <img class = "imgcontainer" src="/media/{{Ev.event_image}}" alt="">
+    <div class="container1">
+        <h style = "font-size: 30px; margin: 0px 140px;"> {{Ev.event_name}}</h>
+        <p style="margin-left: 140px;"> Date and time: {{ Ev.event_date}} at {{Ev.event_time}} </p>
+    </div>
+    <div class="container2">
+        <h style="font-size: 30px;"> About: </h>
+        <p> {{Ev.event_details}}</p>
+    </div>
+    <div class="container3">
+        <h style="margin: 2px 40px; font-size: 30px;"> {{Ev.event_city}}</h>
+        <p style="font-size: 20px;"> {{Ev.event_location}}</p>
+    </div>
+</body>
+</html>
