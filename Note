@@ -1,0 +1,5 @@
+the app is integrated in the main project. Please ingnore that the main project has no front end as the task was 
+only to develop the front end.
+To access the app, please go into the following url 
+http://127.0.0.1:8000/events/
+Several things as dynamic web and styles are not added its a request to ignore. 
